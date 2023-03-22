@@ -1,38 +1,17 @@
-.App {
+h1 {
+  color:floralwhite;
+  border-style: dotted;
   text-align: center;
+  font-weight: bold;
+  text-shadow: 10px 10px 5px;
+  background-image: url("./descarga.jfif");
+  height: 3em;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  border-style: groove;
+  text-align: center;
+  background-color: crimson;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+  font-weight: bold;
 }

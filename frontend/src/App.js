@@ -1,4 +1,4 @@
-import "./index.css"
+import "./App.css"
 import { useEffect, useState } from "react";
 import NovaTarefa from "./componentes/novatarefa";
 import MostrarTarefas from "./componentes/mostrarTarefas";
@@ -20,7 +20,7 @@ function App() {
     resposta.json().then(reaccionParaNovosDatos)
   }
   function reaccionErroResposta(erro) {
-    alert("Estamos tendo problemas coa conexión neste momento, probe a intentalo máis tarde")
+    erro("Estamos tendo problemas coa conexión neste momento, probe a intentalo máis tarde")
   }
 
   function reaccionParaNovosDatos(novosDatos){

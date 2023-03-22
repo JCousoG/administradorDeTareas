@@ -7,12 +7,12 @@ function NovaTarefa({actualizarTarefas}){
     }
     function manexadorClick() {
         const paraId = Date.now()
-        const tarefa = {
+        const tarefas = {
             id: paraId,
             descripcion: descripcion,
             rematada: false,
         }
-        const JSONTarefa = JSON.stringify(tarefa)
+        const JSONTarefa = JSON.stringify(tarefas)
    
     fetch( 
         "http://localhost:8000/tarefa/",
@@ -24,6 +24,11 @@ function NovaTarefa({actualizarTarefas}){
         )
         .then(reaccionParaResposta)
         .catch(reaccionParaErroResposta)
+}
+    function pulsarEnter (evento) {
+    if (evento.key === 'Enter') {
+      manexadorClick();
+    }
 }
     function reaccionParaResposta(resposta) {
         if (resposta.ok) {
@@ -40,7 +45,7 @@ function NovaTarefa({actualizarTarefas}){
         <>
         <label>
             Engade unha nova tarefa
-            <input type="text" value={descripcion} onInput={manexadorInput}/>
+            <input type="text" value={descripcion} onInput={manexadorInput} onKeyDown={pulsarEnter}/>
         </label>
         <button onClick={manexadorClick}>+</button>
         
