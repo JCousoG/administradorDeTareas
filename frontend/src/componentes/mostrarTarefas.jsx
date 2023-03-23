@@ -3,7 +3,7 @@ function MostrarTarefa({tarefas}) {
         <ol>
             {
                 tarefas.map(
-                    tarefa=><li key={tarefa.id}>{tarefa.descripcion} <input type="checkbox" checked={tarefa.rematada}></input></li>
+                    tarefa=><li key={tarefa.id}>{tarefa.id}{tarefa.descripcion} <input type="checkbox" checked={tarefa.rematada}></input></li>
                 )
             }
         </ol>
