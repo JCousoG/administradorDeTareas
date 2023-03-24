@@ -1,14 +1,10 @@
 import { useState } from "react";
 
-function EliminarTarefas({tarefaAEliminar}) {
-    const [idEliminar, setIdEliminar] = useState()
-    function manexadorInput(evento) {
-        setIdEliminar(evento.target.value)
-        console.log(idEliminar);
-    }
+function EliminarTarefas({tarefaId}) {
+   
     
     function manexadorClick() {
-        console.log(idEliminar);
+      
         fetch( 
             "http://localhost:8000/tarefa/",
             {
@@ -16,7 +12,7 @@ function EliminarTarefas({tarefaAEliminar}) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(
                     {
-                    id: parseInt(idEliminar)
+                    id: tarefaId
                     }
                 )
             }
@@ -27,8 +23,7 @@ function EliminarTarefas({tarefaAEliminar}) {
         
         function reaccionParaResposta(resposta) {
             if (resposta.ok) {
-                setIdEliminar()
-                tarefaAEliminar()
+               
             } else {
                 alert(`A petición non foi aceptada ${resposta.status}`)
             }
@@ -38,10 +33,7 @@ function EliminarTarefas({tarefaAEliminar}) {
     }
     return (
         <>
-        <label>
-            Introduce o número de Id para eliminar unha tarefa
-            <input type="text" value={idEliminar} onInput={manexadorInput} />
-        </label>
+
         <button onClick={manexadorClick}>-</button>
         
         </>
