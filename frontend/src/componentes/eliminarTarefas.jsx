@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-function EliminarTarefas({tarefaId}) {
+function EliminarTarefas({tarefaId, actualizarTarefas}) {
    
     
     function manexadorClick() {
@@ -23,7 +21,7 @@ function EliminarTarefas({tarefaId}) {
         
         function reaccionParaResposta(resposta) {
             if (resposta.ok) {
-               
+                actualizarTarefas()
             } else {
                 alert(`A petición non foi aceptada ${resposta.status}`)
             }
@@ -34,7 +32,7 @@ function EliminarTarefas({tarefaId}) {
     return (
         <>
 
-        <button onClick={manexadorClick}>-</button>
+        <button onClick={manexadorClick}>x</button>
         
         </>
     )

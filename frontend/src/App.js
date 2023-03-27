@@ -8,7 +8,7 @@ function App() {
   const [tarefas, setTarefas] = useState([])
   useEffect(
     obterTarefasActualizadas,
-    [tarefas]
+    []
   )
  
  
@@ -37,7 +37,7 @@ function App() {
       <button onClick={manexadorActualizar}>Actualizar</button>
       <h1>Administrador de tarefas</h1>
       <NovaTarefa actualizarTarefas={obterTarefasActualizadas}/>
-      <MostrarTarefas tarefas={tarefas}/>
+      <MostrarTarefas tarefas={tarefas} actualizarTarefas={obterTarefasActualizadas}/>
       
       
     </main>
