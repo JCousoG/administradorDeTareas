@@ -9,7 +9,7 @@ function MostrarTarefa({tarefas, actualizarTarefas}) {
         <ol>
             {
                 tarefas.map(
-                    tarefa=> <Tarefa tarefas={tarefa} actualizarTarefas={actualizarTarefas}/>
+                    tarefa=> <Tarefa key={tarefa.id} tarefas={tarefa} actualizarTarefas={actualizarTarefas}/>
                 )
             }
             
