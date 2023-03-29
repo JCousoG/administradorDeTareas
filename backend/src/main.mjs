@@ -22,7 +22,7 @@ CREATE TABLE
 `);
 
 app.post("/tarefa/", (peticion, respuesta)=>{
-    db.run( // Ejemplo de inserción en la base de datos
+    db.run( // Exemplo de inserción na base de datos
     `INSERT INTO tarefas(id, descripcion, rematada) VALUES (?, ?, ?)`,
     [peticion.body.id, peticion.body.descripcion, peticion.body.rematada],
     (error) => {

@@ -8,18 +8,6 @@ function Tarefa ({tarefas, actualizarTarefas}) {
       tarefaAModificar,
       [descripcion, rematada]
     )
-
-    function tarefaAEliminar() {
-        fetch("http://localhost:8000/tarefa/")
-        .then(reaccionParaRespostaEliminar)
-        .catch(reaccionErroRespostaEliminar)
-      }
-      function reaccionParaRespostaEliminar(resposta) {
-        resposta.json().then(tarefaAEliminar)
-      }
-      function reaccionErroRespostaEliminar(erro) {
-        erro("Estamos tendo problemas coa conexión neste momento, probe a intentalo máis tarde")
-      }
       function tarefaAModificar() {
         fetch(
           "http://localhost:8000/tarefa/",
