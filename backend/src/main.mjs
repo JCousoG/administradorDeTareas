@@ -6,7 +6,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const db = new sqlite3.Database('./base-de-datos.db', (error)=> {
+const db = new sqlite3.Database('./base-de-datos.sqlite', (error)=> {
     if (error) console.error(error)
     else console.log('Conectada coa base de datos.');
 

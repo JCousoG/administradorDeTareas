@@ -2,13 +2,14 @@ import { useState } from "react";
 
 function NovaTarefa({actualizarTarefas}){
     const [descripcion, setDescripcion] = useState("")
+    const [id, setId] = useState()
     function manexadorInput(evento) {
         setDescripcion(evento.target.value)
     }
     function manexadorClick() {
-        const paraId = Date.now()
+        
         const tarefas = {
-            id: paraId,
+            id: id,
             descripcion: descripcion,
             rematada: false,
         }
